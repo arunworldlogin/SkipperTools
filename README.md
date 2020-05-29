@@ -38,7 +38,7 @@ Project used to ease the android development by skipping/reducing commenly used 
 
 Adding from gradle:
 
-        Add it in your root build.gradle at the end of repositories:
+        #Add it in your root build.gradle at the end of repositories:
 
         allprojects {
             repositories {
@@ -47,7 +47,7 @@ Adding from gradle:
             }
         }
 
-        Add the dependency
+        #Add the dependency
 
         dependencies {
         	        implementation 'com.github.arunworldlogin:SkipperTools:VERSION'
