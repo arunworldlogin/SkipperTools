@@ -50,5 +50,5 @@ Adding from gradle:
         Add the dependency
 
         dependencies {
-        	        implementation 'com.github.arunworldlogin:SkipperTools:Tag'
+        	        implementation 'com.github.arunworldlogin:SkipperTools:VERSION'
         }
