@@ -52,3 +52,5 @@ Adding from gradle:
         dependencies {
         	        implementation 'com.github.arunworldlogin:SkipperTools:VERSION'
         }
+
+You can find the latest version here : https://github.com/arunworldlogin/SkipperTools/releases
