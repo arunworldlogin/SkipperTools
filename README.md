@@ -34,3 +34,21 @@ Project used to ease the android development by skipping/reducing commenly used 
             )
         rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rv.adapter = recycleViewAdapter
+
+
+Adding from gradle:
+
+        Add it in your root build.gradle at the end of repositories:
+
+        allprojects {
+            repositories {
+                ...
+                maven { url 'https://jitpack.io' }
+            }
+        }
+
+        Add the dependency
+
+        dependencies {
+        	        implementation 'com.github.arunworldlogin:SkipperTools:Tag'
+        }
