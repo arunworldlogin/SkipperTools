@@ -3,7 +3,7 @@ Project used to ease the android development by skipping/reducing commenly used 
 
 # Tool 1 : Generic RecyclerView Adapter
 
-//Dummy data
+        //Dummy data
         val data = arrayListOf(TestData("One"), TestData("Two"), TestData("Three"))
         val emptyStateData = TestData("Empty List")
 
