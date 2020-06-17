@@ -1,7 +1,7 @@
 # SkipperTools
 Project used to ease the android development by skipping/reducing commenly used boilerplate code
 
-# Tool 1 : Generic RecyclerView Adapter
+# Tool 1 : Generic RecyclerView Adapter.
 
         //Dummy data
         val data = arrayListOf(TestData("One"), TestData("Two"), TestData("Three"))
