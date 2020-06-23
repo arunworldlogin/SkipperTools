@@ -42,10 +42,12 @@ class GenericRecyclerViewAdapter<ModelType : Any>(
     private val viewHolderData: ArrayList<ModelType>,
     private val emptyStateViewHolderLayout: Int? = null,
     private val emptyStateViewHolderBinder: ViewBinder? = null,
-    private val emptyStateViewHolderData: Any? = null
+    private val emptyStateViewHolderData: Any? = null,
+    var clickListener: OnClickListener<ModelType>? = null
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var emptyState = false
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (!emptyState) ViewHolder(
@@ -80,7 +82,14 @@ class GenericRecyclerViewAdapter<ModelType : Any>(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is ViewHolder)
-            holder.binder.bind(viewHolderData[position], holder.binding)
+            holder.apply {
+                binder.bind(viewHolderData[position], binding)
+                clickListener?.let { listener ->
+                    binding.root.setOnClickListener {
+                        listener.onClick(position, viewHolderData[position])
+                    }
+                }
+            }
         else if (holder is EmptyStateViewHolder)
             emptyStateViewHolderData?.let {
                 holder.binder.bind(it, holder.binding)
@@ -95,5 +104,9 @@ class GenericRecyclerViewAdapter<ModelType : Any>(
 
     interface ViewBinder {
         fun bind(data: Any, binding: ViewDataBinding)
+    }
+
+    interface OnClickListener<ModelType : Any> {
+        fun onClick(position: Int, data: ModelType)
     }
 }

@@ -14,6 +14,7 @@
 package com.simplecreations.skippertools
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -56,7 +57,16 @@ class MainActivity : AppCompatActivity() {
                 data,
                 R.layout.empty_state_layout,
                 emptyStateViewHolderBinder,
-                emptyStateData
+                emptyStateData, object : GenericRecyclerViewAdapter.OnClickListener<TestData> {
+                    override fun onClick(position: Int, data: TestData) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Clicked item at $position",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                }
             )
         rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rv.adapter = recycleViewAdapter
