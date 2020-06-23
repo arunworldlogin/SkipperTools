@@ -24,13 +24,18 @@ Project used to ease the android development by skipping/reducing commenly used 
         //Setting Recyclerview adapter
         val recycleViewAdapter =
             GenericRecyclerViewAdapter(
-                this,
-                R.layout.list_item_layout,
-                vieHolderBinder,
-                data,
-                R.layout.empty_state_layout,
-                emptyStateViewHolderBinder,
-                emptyStateData
+                 this,
+                 R.layout.list_item_layout,
+                 vieHolderBinder,
+                 data,
+                 R.layout.empty_state_layout,
+                 emptyStateViewHolderBinder,
+                 emptyStateData, object : GenericRecyclerViewAdapter.OnClickListener<TestData>{
+                     override fun onClick(position: Int, data: TestData) {
+                         Toast.makeText(this@MainActivity, "Clicked item at $position", Toast.LENGTH_LONG).show()
+                     }
+
+                 }
             )
         rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rv.adapter = recycleViewAdapter
