@@ -40,6 +40,15 @@ Project used to ease the android development by skipping/reducing commenly used 
         rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rv.adapter = recycleViewAdapter
 
+# Tool 1 : Retrofit instance
+
+        Retrofit instance with moshi converter and okhhtp logging intercepter
+
+        //Getting retrofit instance
+        RetrofitClient.getInstance("YOUR_BASE_URL").apply {
+            //create(YourService::class.java)
+        }
+
 
 Adding from gradle:
 

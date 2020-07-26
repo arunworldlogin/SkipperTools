@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.simplecreations.skipperlibrary.network.RetrofitClient
 import com.simplecreations.skipperlibrary.receylerview.utils.GenericRecyclerViewAdapter
 import com.simplecreations.skippertools.databinding.EmptyStateLayoutBinding
 import com.simplecreations.skippertools.databinding.ListItemLayoutBinding
@@ -70,5 +71,10 @@ class MainActivity : AppCompatActivity() {
             )
         rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rv.adapter = recycleViewAdapter
+
+        //Getting retrofit instance
+        RetrofitClient.getInstance("YOUR_BASE_URL").apply {
+            //create(YourService::class.java)
+        }
     }
 }
