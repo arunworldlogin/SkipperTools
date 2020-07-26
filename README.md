@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/arunworldlogin/SkipperTools.svg)](https://jitpack.io/#arunworldlogin/SkipperTools)
 # SkipperTools
 Project used to ease the android development by skipping/reducing commenly used boilerplate code
 
